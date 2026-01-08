@@ -20,13 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-import os
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-0wtz1#t*qpou67rozr*)(avgnau)24u5a_9j%)i7w+*a+$&kc#')
+SECRET_KEY = 'django-insecure-0wtz1#t*qpou67rozr*)(avgnau)24u5a_9j%)i7w+*a+$&kc#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True
 
-ALLOWED_HOSTS = ['browcherBackend.amplinova.com', 'www.browcherBackend.amplinova.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -127,24 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-# Security settings for production
-SECURE_SSL_REDIRECT = not DEBUG
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SESSION_COOKIE_SECURE = not DEBUG
-CSRF_COOKIE_SECURE = not DEBUG
-SESSION_COOKIE_HTTPONLY = True
-CSRF_COOKIE_HTTPONLY = True
-
-CORS_ALLOWED_ORIGINS = [
-    'https://browcherBackend.amplinova.com',
-    'https://www.browcherBackend.amplinova.com',
-]
-if DEBUG:
-    CORS_ALLOW_ALL_ORIGINS = True
+STATIC_URL = 'static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+CORS_ALLOW_ALL_ORIGINS = True
