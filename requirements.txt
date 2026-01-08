@@ -1,0 +1,10 @@
+asgiref==3.11.0
+Django==5.2.10
+djangorestframework
+django-cors-headers
+Pillow
+gunicorn
+python-dotenv
+sqlparse==0.5.5
+typing_extensions==4.15.0
+tzdata==2025.3
